@@ -1,0 +1,18 @@
+.voted .ui-icon{
+    background-color: rgb(79, 207, 0);
+}
+
+#progress-outer {
+    background: #333;
+    -webkit-border-radius: 13px;
+    height: 20px;
+    width: 100%;
+    padding: 3px;
+}
+
+#progress-inner {
+    background: orange;
+    width: 0%;
+    height: 100%;
+    -webkit-border-radius: 9px;
+}

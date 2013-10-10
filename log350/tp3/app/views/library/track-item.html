@@ -1,0 +1,7 @@
+<a href="#" split-icon="delete" class="<%= this.model.get('enabled')? '': 'ui-disabled' %>" >
+    <h2><%- track.get('title') %></h2>
+    <% if(typeof onlyTitle === "undefined" || !onlyTitle) { %>
+        <p><%- track.get('artist') %> - <%- track.get('album') %></p>
+    <% } %>
+    <span class="vote-count ui-li-count"><%- track.get('vote') %></span>
+</a>

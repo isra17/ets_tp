@@ -1,0 +1,48 @@
+[
+	{
+		"id": 2,
+		"title": "Belzébuth",
+		"artist": "Les Colocs",
+		"vote": 1,
+		"hasVotedFor": true,
+		"voters": ["Pierre Jean-Jaque"],
+		"length": 10,
+		"enabled": true
+	},
+	{
+		"id": 3,
+		"title": "Julie",
+		"artist": "Les Colocs",
+		"vote": 0,
+		"length": 180,
+		"enabled": true
+	},
+	{
+		"id": 1,
+		"title": "Another Brick in the Wall, Pt.2",
+		"album": "Greatest Hits CD1",
+		"artist": "Pink Floyd",
+		"vote": 2,
+		"voters": ["Pierre Jean-Jaque", "Bob Marley"],
+		"length": 10,
+		"enabled": true
+	},
+	{
+		"id": 4,
+		"title": "Shine on You Crazy Diamond, P",
+		"album": "Greatest Hits CD2",
+		"artist": "Pink Floyd",
+		"vote": 0,
+		"length": 180,
+		"enabled": true
+	},
+	{
+		"id": 5,
+		"title": "The Happiest Days of Our Live",
+		"album": "Greatest Hits CD1",
+		"artist": "Pink Floyd",
+		"vote": 0,
+		"length": 180,
+		"enabled": true
+	}
+]

@@ -1,0 +1,14 @@
+<h2>Other user voting</h2>
+<% if(track.get('voters').length) { %>
+    <ul>
+        <%
+            _.each(track.get('voters'), function(voter){
+        %>
+            <li><%- voter %></li>
+        <%
+            });
+        %>
+    </ul>
+<% } else { %>
+    <p>No other user has voted</p>
+<% } %>
