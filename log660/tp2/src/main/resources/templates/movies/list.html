@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Webflix</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+<!-- /.navbar -->
+
+<div class="container">
+    <h3>Recherche</h3>
+    <form action="/films/search" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label for="searchTitre" class="col-sm-2 control-label">Titre</label>
+            <div class="col-sm-10"><input type="text" id="searchTitre" name="titre" class="form-control" /></div>
+        </div>
+        <div class="form-group">
+            <label for="searchAnneeMin" class="col-sm-2 control-label">Année min</label>
+            <div class="col-sm-10"><input type="text" id="searchAnneeMin" name="anneeMin" class="form-control" /></div>
+        </div>
+        <div class="form-group">
+            <label for="searchAnneeMax" class="col-sm-2 control-label">Année max</label>
+            <div class="col-sm-10"><input type="text" id="searchAnneeMax" name="anneeMax" class="form-control" /></div>
+        </div>
+
+        <div class="form-group">
+            <label for="searchPays" class="col-sm-2 control-label">Pays</label>
+            <div class="col-sm-10"><input type="text" id="searchPays" name="pays" class="form-control" /></div>
+        </div>
+
+        <div class="form-group">
+            <label for="searchGenre" class="col-sm-2 control-label">Genre</label>
+            <div class="col-sm-10"><input type="text" id="searchGenre" name="genre" class="form-control" /></div>
+        </div>
+
+        <div class="form-group">
+            <label for="searchRealisateur" class="col-sm-2 control-label">Réalisateur</label>
+            <div class="col-sm-10"><input type="text" id="searchRealisateur" name="realisateur" class="form-control" /></div>
+        </div>
+
+        <div class="form-group">
+            <label for="searchActeur" class="col-sm-2 control-label">Acteur</label>
+            <div class="col-sm-10"><input type="text" id="searchActeur" name="acteur" class="form-control" /></div>
+        </div>
+
+        <div class="form-group">
+            <label for="searchLangue" class="col-sm-2 control-label">Langue</label>
+            <div class="col-sm-10">
+                <select style="color: black;" name="langue" id="searchLangue" class="form-control" >
+                    <option value="">Toutes</option>
+                    <option th:each="langue : ${langues}"
+                            th:value="${langue}"
+                            th:text="${langue}"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Rechercher</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="list-group">
+        <a th:each="movie : ${movies}" th:href="@{/films/{id}(id=${movie.idFilm})}" class="list-group-item">
+            <span class="badge" th:text="${movie.anneeSortie}"></span>
+            <span th:text="${movie.titre}"></span>
+        </a>
+    </div>
+
+    <div th:if="${#lists.isEmpty(movies)}">
+        Aucun film trouvé.
+    </div>
+
+</div>
+<!--/.container-->
+
+</body>
+</html>

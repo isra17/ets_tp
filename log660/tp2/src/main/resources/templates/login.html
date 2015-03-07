@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Webflix</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please sign in</h3>
+                </div>
+                <div class="panel-body">
+                    <div th:if="${param.error}">
+                        Invalid username and password.
+                    </div>
+                    <div th:if="${param.logout}">
+                        You have been logged out.
+                    </div>
+                    <form th:action="@{/login}" method="post" accept-charset="UTF-8" role="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="E-mail" name="username" type="text" value="RonaldDRobinson12@gmail.com"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" name="password" type="password" value="Aqu4caezei1c"/>
+                            </div>
+                            <input class="btn btn-lg btn-success btn-block" type="submit" value="Login"/>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.container-->
+
+</body>
+</html>

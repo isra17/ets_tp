@@ -1,0 +1,1 @@
+Pour démarrer l'application, executer le fichier build.bat situé à la racine du projet.
