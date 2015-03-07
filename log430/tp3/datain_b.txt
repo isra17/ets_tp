@@ -1,0 +1,13 @@
+0001 SPC SYS003 03.01 00 DIF Fail because status is not REG or CRI
+0002 REG SYS003 03.01 00 PRO Fail because state is not DIF or RIS
+0003 REG SYS003 03.01 50 DIF Fail because progress >= 50
+0004 REG SYS003 03.01 100 DIF Fail because progress >= 50
+0005 REG SYS003 03.01 00 RIS Pass!
+0006 REG SYS003 03.01 49 DIF Pass!
+0007 CRI SYS001 01.01 24 RIS Fail because progress != 25
+0008 CRI SYS001 01.01 26 RIS Fail because progress != 25
+0009 CRI SYS001 01.01 25 RIS Pass!
+0010 CRI SYS001 01.05 75 PRO Fail because progress <= 75
+0011 CRI SYS001 01.05 00 DIF Fail because progress <= 75
+0012 CRI SYS003 02.04 76 DIF Pass!
+0013 CRI SYS003 02.04 100 FOO Pass!

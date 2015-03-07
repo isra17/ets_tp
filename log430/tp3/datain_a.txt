@@ -1,0 +1,7 @@
+0001 CRI SYS001 01.01 90 DIF First entry of file 1
+0002 REG SYS001 01.01 90 RIS Third entry of file 1
+0003 CRI SYS001 01.01 90 DIF Second entry of file 1
+0004 SPC SYS001 01.05 60 FOO Fail because file 2 filter out FOO state
+0005 SPC SYS001 01.05 60 ABB Second entry of file 2
+0006 SPC SYS001 01.05 60 BBB Third entry of file 2
+0007 SPC SYS001 01.05 60 AAA First entry of file 2
