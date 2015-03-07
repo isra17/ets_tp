@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: jogl.jar RXTXcomm.jar
+Main-Class: ca.etsmtl.log550.oscilloscope.Oscilloscope
+
