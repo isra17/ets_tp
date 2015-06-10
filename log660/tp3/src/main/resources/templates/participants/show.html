@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Webflix</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+<!-- /.navbar -->
+
+<div class="container">
+    <h1 th:text="${participant.nomComplet}"></h1>
+
+    <h4>Nom</h4>
+    <p th:text="${participant.nom}"></p>
+
+    <h4>Prénom</h4>
+    <p th:text="${participant.prenom}"></p>
+
+    <h4>Date de naissance</h4>
+    <p th:text="${participant.lieuNaissance}"></p>
+
+    <div th:if="${participant.biographie}">
+        <h4>Biographie</h4>
+        <p th:text="${participant.biographie.contenu}"></p>
+    </div>
+</div>
+<!--/.container-->
+
+</body>
+</html>
