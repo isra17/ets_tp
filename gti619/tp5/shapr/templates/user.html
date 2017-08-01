@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>{{ (user and user.username) or "New User" }}</h1>
+
+<form method="POST" action="">
+  {% from "_formhelpers.html" import render_field %}
+  {{ form.csrf_token }}
+  {% if form.current_password %}
+  <b>{{ render_field(form.current_password) }}</b>
+  {% endif %}
+  <hr />
+  {% if not user %}
+    {{ render_field(form.username) }}
+  {% endif %}
+  {{ render_field(form.password) }}
+  {{ render_field(form.permissions) }}
+  <input type="submit" value="Save" />
+  {% if user %}
+  {{ form.delete() }}
+  {{ form.reset_password() }}
+  {% endif %}
+</form>
+
+{% if user %}
+<h2>Events</h2>
+<ul>
+{% for event in user.events[::-1] %}
+<li>
+  {{ event.date }} : {{ event.type }} - {{ event.info }}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}
+
